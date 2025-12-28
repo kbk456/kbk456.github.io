@@ -99,8 +99,8 @@ list_posts() {
     i=1
     for file in $(ls -r "$POSTS_DIR"/*.md 2>/dev/null); do
         filename=$(basename "$file")
-        # 파일에서 title 추출
-        title=$(grep -m 1 "^title:" "$file" | sed 's/title: *"\?\([^"]*\)"\?/\1/')
+        # 파일에서 title 추출 (title: "제목" 형식에서 제목만 추출)
+        title=$(grep -m 1 "^title:" "$file" | sed 's/^title: *//; s/^"//; s/"$//')
         date=$(echo "$filename" | grep -oE "^[0-9]{4}-[0-9]{2}-[0-9]{2}")
         echo -e "  ${YELLOW}[$i]${NC} $date - $title"
         ((i++))
@@ -117,6 +117,12 @@ edit_post() {
     fi
 
     read -p "수정할 글 번호: " num
+
+    # 빈 입력 또는 숫자가 아닌 경우 처리
+    if [ -z "$num" ] || ! [[ "$num" =~ ^[0-9]+$ ]]; then
+        echo -e "${RED}올바른 번호를 입력해주세요.${NC}"
+        return
+    fi
 
     files=($(ls -r "$POSTS_DIR"/*.md 2>/dev/null))
     if [ "$num" -gt 0 ] && [ "$num" -le "${#files[@]}" ]; then
@@ -145,6 +151,12 @@ delete_post() {
     fi
 
     read -p "삭제할 글 번호: " num
+
+    # 빈 입력 또는 숫자가 아닌 경우 처리
+    if [ -z "$num" ] || ! [[ "$num" =~ ^[0-9]+$ ]]; then
+        echo -e "${RED}올바른 번호를 입력해주세요.${NC}"
+        return
+    fi
 
     files=($(ls -r "$POSTS_DIR"/*.md 2>/dev/null))
     if [ "$num" -gt 0 ] && [ "$num" -le "${#files[@]}" ]; then
