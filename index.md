@@ -3,12 +3,11 @@ layout: default
 title: 김보균 · Backend Developer
 ---
 
-<p style="border-bottom: 1px solid #e1e4e8; padding-bottom: 1rem; margin-bottom: 2rem;">
-  <a href="/resume.pdf" target="_blank" style="margin-right: 2rem; font-weight: 600;">Resume</a>
-  <a href="https://www.notion.so/Backend-Engineer-Portfolio-3512f1cf5a008053a8f0eaff3d9e657a" target="_blank" style="margin-right: 2rem; font-weight: 600;">Portfolio</a>
-  <a href="/study" style="margin-right: 2rem; font-weight: 600;">Study Log</a>
-  <a href="https://github.com/kbk456" target="_blank" style="font-weight: 600;">GitHub</a>
-</p>
+<div style="margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e1e4e8;">
+  <a href="https://www.notion.so/Backend-Engineer-Portfolio-3512f1cf5a008053a8f0eaff3d9e657a" target="_blank" style="margin-right: 2rem; font-weight: 600; text-decoration: none;">Portfolio</a>
+  <a href="/study" style="margin-right: 2rem; font-weight: 600; text-decoration: none;">Study Log</a>
+  <a href="https://github.com/kbk456" target="_blank" style="font-weight: 600; text-decoration: none;">GitHub</a>
+</div>
 
 # 김보균 · Backend Developer
 
