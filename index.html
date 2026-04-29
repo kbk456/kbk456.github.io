@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="운영 병목 개선, 시스템 성능 최적화, AI 개발 자동화 경험의 6년차 백엔드 개발자 김보균입니다.">
+  <title>김보균 · Backend Engineer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      color: #1a1a2e;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #f7f9ff;
+      padding: 5rem 0 4.5rem;
+      border-bottom: 1px solid #eaecf0;
+    }
+
+    .hero-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4f6ef7;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-role {
+      font-size: 1rem;
+      color: #4f6ef7;
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-main {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sub {
+      font-size: 0.97rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.35rem;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #4f6ef7;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #3b5be8; }
+
+    .btn-outline {
+      border: 1.5px solid #d0d5dd;
+      color: #333;
+      background: #fff;
+    }
+    .btn-outline:hover { border-color: #4f6ef7; color: #4f6ef7; }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-divider {
+      width: 36px;
+      height: 3px;
+      background: #4f6ef7;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #444;
+      margin-bottom: 0.9rem;
+      font-size: 0.97rem;
+    }
+
+    .about-text strong { color: #222; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      background: #eef1fd;
+      color: #3b55d4;
+      padding: 0.28rem 0.72rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* ── PROJECTS ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      border: 1px solid #e4e8f0;
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      background: #fff;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 18px rgba(79, 110, 247, 0.09);
+      border-color: #bec9fb;
+    }
+
+    .project-card h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0.55rem;
+      line-height: 1.4;
+    }
+
+    .project-card p {
+      font-size: 0.87rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* ── LEARNING ── */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .learning-item {
+      background: #f7f9ff;
+      border: 1px solid #e4e8f0;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+    }
+
+    .learning-item h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.2rem;
+    }
+
+    .learning-item p {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .learning-note {
+      font-size: 0.88rem;
+      color: #888;
+    }
+
+    /* ── LINKS ── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid #e4e8f0;
+      border-radius: 10px;
+      padding: 1.15rem 1.4rem;
+      transition: all 0.18s;
+      background: #fff;
+    }
+
+    .link-card:hover {
+      border-color: #4f6ef7;
+      background: #f7f9ff;
+    }
+
+    .link-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #eef1fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .link-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #4f6ef7;
+    }
+
+    .link-info h4 {
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .link-info p {
+      font-size: 0.8rem;
+      color: #999;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #bbb;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .hero { padding: 3.5rem 0 3rem; }
+      .hero h1 { font-size: 1.85rem; }
+      .hero-main { font-size: 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .learning-grid { grid-template-columns: 1fr 1fr; }
+      .links-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 400px) {
+      .learning-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <h1>김보균</h1>
+      <p class="hero-role">Backend Engineer · 6년차</p>
+      <p class="hero-main">
+        운영 병목 개선 · 시스템 성능 최적화 · AI 개발 자동화 중심의<br>
+        문제 해결형 백엔드 개발자
+      </p>
+      <p class="hero-sub">
+        교육, 핀테크, 회원 서비스 도메인에서 백엔드 API 개발과 운영 안정화를 경험했습니다.
+      </p>
+      <div class="btn-group">
+        <!-- TODO: Resume PDF URL로 교체하세요 -->
+        <a href="#" class="btn btn-primary">Resume</a>
+        <!-- Portfolio: Notion 포트폴리오 -->
+        <a href="https://www.notion.so/Backend-Engineer-Portfolio-3512f1cf5a008053a8f0eaff3d9e657a" target="_blank" class="btn btn-outline">Portfolio</a>
+        <!-- TODO: Velog 프로필 URL로 교체하세요 (예: https://velog.io/@username) -->
+        <a href="#" class="btn btn-outline">Velog</a>
+        <!-- GitHub -->
+        <a href="https://github.com/kbk456" target="_blank" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="section-divider"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Java/Spring Boot 기반으로 교육, 핀테크, 회원 서비스 도메인에서
+            운영 API를 개발하고 운영해왔습니다.
+          </p>
+          <p>
+            단순 기능 구현보다 <strong>성능 병목 분석과 구조적 개선</strong>에 집중하며,
+            SQL 튜닝·집계 테이블 설계·캐시 워밍업으로 운영 서비스 안정성을 높여왔습니다.
+          </p>
+          <p>
+            반복 업무를 Claude Code와 Playwright로 자동화해 개발 생산성을 개선한 경험이 있습니다.
+          </p>
+          <p>
+            현재 대교 디지털개발팀에서 LMS 학습 서비스 백엔드 API 개발과
+            AWS Lambda 서버리스 운영을 담당하고 있습니다.
+          </p>
+        </div>
+        <div>
+          <div class="tag-list">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">JPA</span>
+            <span class="tag">QueryDSL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Tuning</span>
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">Docker</span>
+            <span class="tag">OAuth / JWT</span>
+            <span class="tag">Python</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Claude Code</span>
+            <span class="tag">Playwright</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURED PROJECTS ══════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-divider"></div>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>학습관 백오피스 관리자 통계 조회 구조 개선</h3>
+          <p>
+            대용량 로그 데이터 실시간 조회로 인한 운영 DB 부하 문제를
+            일별 집계 테이블과 캐시 워밍업 구조로 해결했습니다.
+            원본 로그 직접 조회를 회피하여 통계 API 응답 안정성을 확보했습니다.
+          </p>
+          <div class="tag-list">
+            <span class="tag">집계 테이블 설계</span>
+            <span class="tag">Redis 캐시</span>
+            <span class="tag">배치</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>학습 서비스 API 성능 안정화</h3>
+          <p>
+            AWS Aurora Performance Insights로 DB Load 상위 병목 SQL을 식별하고,
+            의존성 서브쿼리를 CTE 구조로 재작성 및 복합 인덱스 재설계.
+            3초 이상 응답 건수 90% 감소, DB Load 정상화.
+          </p>
+          <div class="tag-list">
+            <span class="tag">SQL 튜닝</span>
+            <span class="tag">CTE</span>
+            <span class="tag">인덱스 설계</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Claude Code 기반 개발 업무 자동화</h3>
+          <p>
+            CloudWatch 로그 조회, SQL 튜닝 분석 보조, 빌드/배포 검증,
+            Playwright E2E 테스트, Jira 업무보고를 Claude Code Skill로 자동화해
+            반복 수동 공수를 줄였습니다.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Claude Code</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">E2E 자동화</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>주식 정보 서비스 외부 연동 시스템 구축</h3>
+          <p>
+            Python WebSocket 기반 실시간 시세 데이터 처리,
+            Google/Apple 인앱결제 서버 검증 및 구독 상태 동기화,
+            OAuth/JWT 인증 체계를 설계·구축했습니다.
+          </p>
+          <div class="tag-list">
+            <span class="tag">WebSocket</span>
+            <span class="tag">인앱결제</span>
+            <span class="tag">OAuth / JWT</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LEARNING JOURNEY ════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Learning Journey</h2>
+      <div class="section-divider"></div>
+      <div class="learning-grid">
+        <div class="learning-item">
+          <h4>System Design</h4>
+          <p>대규모 시스템 설계 원칙</p>
+        </div>
+        <div class="learning-item">
+          <h4>Redis</h4>
+          <p>캐싱 전략 및 실무 적용</p>
+        </div>
+        <div class="learning-item">
+          <h4>Kafka</h4>
+          <p>메시지 큐 기반 이벤트 처리</p>
+        </div>
+        <div class="learning-item">
+          <h4>Kotlin / Spring Boot</h4>
+          <p>Kotlin 기반 백엔드 전환</p>
+        </div>
+        <div class="learning-item">
+          <h4>Observability</h4>
+          <p>Grafana · Datadog · CloudWatch</p>
+        </div>
+        <div class="learning-item">
+          <h4>Architecture</h4>
+          <p>DDD · Clean Architecture</p>
+        </div>
+      </div>
+      <p class="learning-note">학습 내용은 Velog와 GitHub Repository에 지속 기록합니다.</p>
+    </div>
+  </section>
+
+  <!-- ══ LINKS ══════════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Links</h2>
+      <div class="section-divider"></div>
+      <div class="links-grid">
+
+        <!-- TODO: Resume PDF URL로 교체하세요 -->
+        <a href="#" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+            </svg>
+          </div>
+          <div class="link-info">
+            <h4>Resume</h4>
+            <p>이력서 PDF</p>
+          </div>
+        </a>
+
+        <!-- Portfolio: Notion 포트폴리오 -->
+        <a href="https://www.notion.so/Backend-Engineer-Portfolio-3512f1cf5a008053a8f0eaff3d9e657a" target="_blank" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+          </div>
+          <div class="link-info">
+            <h4>Portfolio</h4>
+            <p>Notion 포트폴리오</p>
+          </div>
+        </a>
+
+        <!-- TODO: Velog 프로필 URL로 교체하세요 (예: https://velog.io/@username) -->
+        <a href="#" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="link-info">
+            <h4>Velog</h4>
+            <p>기술 블로그</p>
+          </div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/kbk456" target="_blank" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </div>
+          <div class="link-info">
+            <h4>GitHub</h4>
+            <p>github.com/kbk456</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      김보균 · Backend Engineer · kimbokyun311@naver.com
+    </div>
+  </footer>
+
+</body>
+</html>
