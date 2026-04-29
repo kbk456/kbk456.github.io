@@ -1,18 +1,12 @@
-title: "하루하루 나아가기"
-description: "매일 꾸준히 배우고 성장하는 기록"
+title: "김보균 · Backend Developer"
+description: "성능 최적화, 운영 안정화, AI 개발 자동화 경험의 6년차 백엔드 개발자"
 author: kbk456
 
-# GitHub Pages 설정
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
   - jekyll-remote-theme
 
-# 기본 설정
 markdown: kramdown
 highlighter: rouge
-
-# 포스트 설정
 permalink: /:year/:month/:day/:title/
-
-# 인코딩
 encoding: utf-8
